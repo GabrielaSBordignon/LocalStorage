@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armazenar Número</title>
+    
+    <h1>Armazene um número</h1>
+    <h3>Digite um número:</h3>
+</head>
+<body>
+
+    <form id="numberForm">
+        <input type="number" id="numberInput" placeholder="Digite um número" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const number = document.getElementById('numberInput').value;
+            localStorage.setItem('numero', number); 
+            
+            alert(`Seu número ${number} foi armazenado com sucesso!`);
+            console.log(`Número armazenado: ${number}`); 
+        });
+    </script>
+
+</body>
+</html>
